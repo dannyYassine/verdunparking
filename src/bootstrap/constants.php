@@ -1,0 +1,8 @@
+<?php
+
+define('TWILIO_ACCOUNT_SID', 'TWILIO_ACCOUNT_SID');
+define('TWILIO_AUTH_TOKEN', 'TWILIO_AUTH_TOKEN');
+define('TWILIO_FROM_NUMBER', 'TWILIO_FROM_NUMBER');
+define('TWILIO_DEV_TO_NUMBER', 'TWILIO_DEV_TO_NUMBER');
+define('GOOGLE_APPLICATION_CREDENTIALS', __DIR__ . '/VerdunBeach-95162f1ebd76.json');
+define('TMP', __DIR__ . '/../../tmp');

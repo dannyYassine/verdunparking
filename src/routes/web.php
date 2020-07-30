@@ -21,7 +21,7 @@ $router->get('/', function () use ($router) {
     return view('index');
 });
 
-$router->group(['prefix' => 'api'], function () use ($router) {
+$router->group(['prefix' => 'api', 'middleware' => 'cors'], function () use ($router) {
     $router->get('/', function () use ($router) {
         return 'Welcome to the api!';
     });

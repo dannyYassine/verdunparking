@@ -1,4 +1,4 @@
 <?php
 namespace App\Requests;
 
-class BaseApplicationRequest {}
+abstract class BaseApplicationRequest {}

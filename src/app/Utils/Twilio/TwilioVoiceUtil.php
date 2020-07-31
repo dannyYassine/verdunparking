@@ -9,6 +9,7 @@ class TwilioVoiceUtil
     private $auth_token;
     private $twilio_number;
     private $timeout_in_seconds;
+    private $rest_bath_path;
 
     public function __construct()
     {
@@ -16,7 +17,7 @@ class TwilioVoiceUtil
         $this->account_sid = $_ENV[TWILIO_ACCOUNT_SID];
         $this->auth_token = $_ENV[TWILIO_AUTH_TOKEN];
         $this->twilio_number = $_ENV[TWILIO_FROM_NUMBER];
-
+        $this->rest_base_path = 'https://api.twilio.com/2010-04-01';
         $this->timeout_in_seconds = 10;
     }
 
@@ -71,13 +72,36 @@ class TwilioVoiceUtil
      * @return \Twilio\Rest\Api\V2010\Account\RecordingInstance
      * @throws \Twilio\Exceptions\TwilioException
      */
-    public function getFirstRecordingFromCall(string $call_id): \Twilio\Rest\Api\V2010\Account\RecordingInstance
+    public function getFirstRecordingFromCall(string $call_id)
     {
         $call = $this->getClient()
             ->calls($call_id)
             ->fetch();
 
         return $call->recordings->read()[0];
+    }
+
+    /**
+     * @param string $sid
+     * @return \Twilio\Rest\Api\V2010\Account\RecordingInstance
+     * @throws \Twilio\Exceptions\TwilioException
+     */
+    public function getRecentCall()
+    {
+        $call = $this->getClient()
+            ->calls()
+            ->fetch();
+
+        return $call->recordings->read()[0];
+    }
+
+    /**
+     * @param string $record_id
+     * @return false|string
+     */
+    public function getRecordingFile(string $record_id)
+    {
+        return file_get_contents($this->rest_base_path.'/Accounts/'.$this->account_sid.'/Recordings/'.$record_id);
     }
 
     /**

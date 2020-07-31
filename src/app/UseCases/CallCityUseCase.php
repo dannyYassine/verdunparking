@@ -28,14 +28,26 @@ class CallCityUseCase
     public function execute(CallBeachRequest $callBeachRequest)
     {
         // Call city
-//        $call_sid = $this->voiceUtility->call($this->toNumber);
-        // validate recording
-        $call = $this->voiceUtility->getCall('CA5600c932dcb4df5f1ac63c2e9a4cb857');
-        echo json_encode($call->recordings->read()[0]->callSid);
-        $recording = $this->voiceUtility->getFirstRecordingFromCall($call->sid);
-        echo json_encode($recording->status);
+        $call_sid = $this->voiceUtility->call($this->toNumber);
 
-        echo file_get_contents('https://api.twilio.com'.$call->subresourceUris->recordings);
-        // save to
+        $call = $this->voiceUtility->getCall($call_sid);
+
+        $recording = $this->voiceUtility->getFirstRecordingFromCall($call->sid);
+
+        $file = $this->voiceUtility->getRecordingFile($recording->sid);
+
+        try{
+            $this->validateAudioFile($file);
+        } catch (\Exception $e) {
+
+        }
+
+        // create entry to firebase
+        // timestamp, recording_id, call_id
+    }
+
+    private function validateAudioFile($file)
+    {
+
     }
 }

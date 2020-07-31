@@ -54,4 +54,13 @@ $router->group(['prefix' => 'api', 'middleware' => 'cors'], function () use ($ro
     });
 });
 
+$router->get('/sandbox', function () use ($router) {
+    try {
+        require __DIR__.'/sandbox.php';
+        return json_encode(['data' => 'sandbox executed']);
+    } catch (\Exception $e) {
+        return json_encode(['error' => $e->getMessage()]);
+    }
+});
+
 

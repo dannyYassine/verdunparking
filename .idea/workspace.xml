@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a60fb1ea-fe9e-4bf1-a540-ab1844874296" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/UseCases/GetWeatherUseCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/UseCases/UpdateWeatherUseCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Utils/Firebase/FirestoreUtil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/Utils/Firebase/verdunbeach-75d51-firebase-adminsdk-4i670-d1ab143da6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/site.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Listeners/ExampleListener.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Listeners/ExampleListener.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bootstrap/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sandbox.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sandbox.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Utils/Firebase/verdunbeach-75d51-firebase-adminsdk-4i670-d1ab143da6.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Utils/Firebase/secret/verdunbeach-75d51-firebase-adminsdk-4i670-d1ab143da6.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -100,6 +95,7 @@
       <workItem from="1595762280510" duration="5202000" />
       <workItem from="1595792637104" duration="15913000" />
       <workItem from="1596040648447" duration="18456000" />
+      <workItem from="1596289133049" duration="978000" />
     </task>
     <servers />
   </component>
@@ -139,9 +135,9 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="488" y="148" width="858" height="777" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1596254726937" />
-    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1596287932271">
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1596291676381">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1596287932271" />
+    <state x="505" y="250" width="670" height="676" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1596291676381" />
   </component>
 </project>

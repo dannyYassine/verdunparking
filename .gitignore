@@ -2,3 +2,5 @@ src/.env
 VerdunBeach-95162f1ebd76.json
 tmp/*
 !tmp
+*/secret/*
+.idea

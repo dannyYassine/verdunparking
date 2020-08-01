@@ -12,6 +12,7 @@
 |
 */
 
+use App\Events\ExampleEvent;
 use App\UseCases\CallCityUseCase;
 use App\UseCases\GetBeachStatusUseCase;
 use App\UseCases\InterpretRecordingUseCase;
@@ -52,6 +53,11 @@ $router->group(['prefix' => 'api', 'middleware' => 'cors'], function () use ($ro
             return $e->getMessage();
         }
     });
+
+    $router->get('/event', function () use ($router) {
+        event(new ExampleEvent());
+        return json_encode(['data' => 'sent']);
+    });
 });
 
 $router->get('/sandbox', function () use ($router) {
@@ -59,7 +65,12 @@ $router->get('/sandbox', function () use ($router) {
         require __DIR__.'/sandbox.php';
         return json_encode(['data' => 'sandbox executed']);
     } catch (\Exception $e) {
-        return json_encode(['error' => $e->getMessage()]);
+        return json_encode([
+            'error' => [
+                'message' => $e->getMessage(),
+                'trace' => $e->getTrace()
+            ]
+        ]);
     }
 });
 

@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ExampleEvent;
+use App\Utils\FileUtil;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
@@ -26,6 +27,6 @@ class ExampleListener
      */
     public function handle(ExampleEvent $event)
     {
-        //
+        (new FileUtil())->save('hello.txt', 'text');
     }
 }
